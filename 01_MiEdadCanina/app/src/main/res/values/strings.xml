@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dog Age</string>
+    <string name="resultFormat">If you were a dog, you would be %d years old</string>
+    <string name="ageFieldEmpty">Age field is empty</string>
+    <string name="calculate">Calculate</string>
+    <string name="howOld">How old are you?</string>
+    <string name="yourAge">Type your age...</string>
+</resources>
