@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">04_Marcador_de_Baloncesto</string>
+    <string name="local">Local</string>
+    <string name="visitor">Visitor</string>
+    <string name="visitorScore">00</string>
+    <string name="add1Point">+ 1</string>
+    <string name="add2Points">+ 2</string>
+    <string name="localScore">00</string>
+    <string name="minus1Point">- 1</string>
+    <string name="visitante">Visitante</string>
+    <string name="basketball">basketball</string>
+    <string name="restartbutton">restartButton</string>
+    <string name="lakers_court">lakers court</string>
+    <string name="result_button">result button</string>
+</resources>
