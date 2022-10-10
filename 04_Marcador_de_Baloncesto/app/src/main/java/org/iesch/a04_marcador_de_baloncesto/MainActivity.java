@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        setupButtons();
     }
 
     private void setupButtons() {
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             addPointsToScore(1, true);
         });
         binding.localSumarDosButton.setOnClickListener(v -> {
-            addPointsToScore(1, true);
+            addPointsToScore(2, true);
         });
         binding.visitorSumarButton.setOnClickListener(v -> {
             addPointsToScore(1, false);
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             endGame();
         });
     }
-    // termina el jogo, vamos a la otra activity ACUERDATE DE ESTA MIERDA XFABO
+    // termina el jogo, vamos a la otra activity ACUERDATE DE ESTA MIERDA XFAVOR
     private void endGame() {
         Intent intent = new Intent(this, ScoreActivity.class);
         intent.putExtra("localScore", localScore);
@@ -68,14 +70,14 @@ public class MainActivity extends AppCompatActivity {
             binding.localScoreText.setText(String.valueOf(localScore));
         } else {
             visitorScore += points;
-            binding.visitorScoreText.setText(String.valueOf(localScore));
+            binding.visitorScoreText.setText(String.valueOf(visitorScore));
         }
     }
     // 7 - Un botón para resetear los marcadores y pintarlos
     private void resetScores(){
         localScore = 0;
         visitorScore = 0;
-        binding.visitorScoreText.setText(String.valueOf(visitorScore));
         binding.localScoreText.setText(String.valueOf(localScore));
+        binding.visitorScoreText.setText(String.valueOf(visitorScore));
     }
 }
