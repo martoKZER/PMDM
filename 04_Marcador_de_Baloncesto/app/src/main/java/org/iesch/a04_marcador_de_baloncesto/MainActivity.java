@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import org.iesch.a04_marcador_de_baloncesto.databinding.ActivityMainBinding;
 import org.iesch.a04_marcador_de_baloncesto.viewmodel.MainViewModel;
@@ -49,12 +50,24 @@ public class MainActivity extends AppCompatActivity {
             //binding.visitorScoreText.setText(String.valueOf(viewModel.getVisitorScore()));
         });
 
-        binding.localSumarButton.setOnClickListener(v -> addPointsToScore(1 , true));
-        binding.localSumarDosButton.setOnClickListener(v -> addPointsToScore(2 , true));
-        binding.visitorSumarButton.setOnClickListener(v -> addPointsToScore(1 , false));
-        binding.visitorSumarDosButton.setOnClickListener(v -> addPointsToScore(2 , false));
-        binding.restartButton.setOnClickListener(v -> resetScores());
-        binding.resultButton.setOnClickListener(v -> endMatch());
+        binding.localSumarButton.setOnClickListener(v -> {
+            addPointsToScore(1 , true);
+        });
+        binding.localSumarDosButton.setOnClickListener(v -> {
+            addPointsToScore(2 , true);
+        });
+        binding.visitorSumarButton.setOnClickListener(v -> {
+            addPointsToScore(1 , false);
+        });
+        binding.visitorSumarDosButton.setOnClickListener(v -> {
+            addPointsToScore(2 , false);
+        });
+        binding.restartButton.setOnClickListener(v -> {
+            resetScores();
+        });
+        binding.resultButton.setOnClickListener(v -> {
+            endMatch();
+        });
 
     }
 
@@ -83,19 +96,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
