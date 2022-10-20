@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <data />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtQuestionNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="185dp"
+                android:layout_marginTop="100dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="1 / 3"
+                android:textColor="@color/light_grey"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:paddingStart="60dp"
+                android:paddingEnd="50dp"
+                android:text="Simyo, cuya razón social es Orange España Virtual, S.L.U., es una compañía de servicios de telecomunicaciones de bajo coste"
+                android:textAlignment="inherit"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtClue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:text="Pista: el caballo blanco solo puede ser blanco"
+                android:textAlignment="inherit"
+                android:textColor="@color/blue_clue"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+
+            <RadioButton
+                android:id="@+id/rButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginStart="80dp"
+                android:text="Opcion 1"
+                android:paddingEnd="40dp"
+                tools:ignore="RtlSymmetry" />
+            <RadioButton
+                android:id="@+id/rButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="80dp"
+                android:text="Opcion 2"
+                android:paddingEnd="40dp"
+                tools:ignore="RtlSymmetry" />
+            <RadioButton
+                android:id="@+id/rButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="80dp"
+                android:text="Opcion 3"
+                android:paddingEnd="40dp"
+                tools:ignore="RtlSymmetry" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="150dp"
+                android:textColorHighlight="@color/purple_200"
+                android:text="@string/submit"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>
