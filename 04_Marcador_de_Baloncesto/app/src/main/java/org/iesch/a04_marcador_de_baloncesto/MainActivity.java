@@ -1,108 +1,83 @@
 package org.iesch.a04_marcador_de_baloncesto;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import org.iesch.a04_marcador_de_baloncesto.databinding.ActivityMainBinding;
-import org.iesch.a04_marcador_de_baloncesto.viewmodel.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
-
     private ActivityMainBinding binding;
-    private MainViewModel viewModel;
+    private int localScore = 0;
+    private int visitorScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
-
-        // LIVEDATA 5 - Aqui es donde entran en juego los observers
-        viewModel.getLocalScore().observe(this,localScoreInteger -> {
-            // Este entero es el valor del MutableLiveData que estamos observando
-            binding.localScoreText.setText(String.valueOf(localScoreInteger));
-        });
-        viewModel.getVisitorScore().observe(this,visitorScoreInteger -> {
-            // Este entero es el valor del MutableLiveData que estamos observando
-            binding.visitorScoreText.setText(String.valueOf(visitorScoreInteger));
-        });
-
-
         setupButtons();
     }
 
-    // LIVEDATA 6 - Como cuando cambien los valores ya se actualizan los Textview, no necesitamos hacerlo aquí
     private void setupButtons() {
-        // Siempre que ocurra un cambio a estos valores, se va a activar su observer y entonces cambiará de valor
+        // 4 - Me creo un método para restar la puntuación local
         binding.localMinusButton.setOnClickListener(v -> {
-            viewModel.decreaseLocal();
-            //binding.localScoreText.setText(String.valueOf(viewModel.getLocalScore()));
+            if (localScore > 0) {
+                localScore--;
+                binding.localScoreText.setText(String.valueOf(localScore));
+            }
         });
-
         binding.visitorMinusButton.setOnClickListener(v -> {
-            viewModel.decreaseVisitor();
-            //binding.visitorScoreText.setText(String.valueOf(viewModel.getVisitorScore()));
+            if (visitorScore > 0) {
+                visitorScore--;
+                binding.visitorScoreText.setText(String.valueOf(visitorScore));
+            }
+
         });
 
+        // 6 - Me creo un método para restar la puntuación visitante
         binding.localSumarButton.setOnClickListener(v -> {
-            addPointsToScore(1 , true);
+            addPointsToScore(1, true);
         });
         binding.localSumarDosButton.setOnClickListener(v -> {
-            addPointsToScore(2 , true);
+            addPointsToScore(2, true);
         });
         binding.visitorSumarButton.setOnClickListener(v -> {
-            addPointsToScore(1 , false);
+            addPointsToScore(1, false);
         });
         binding.visitorSumarDosButton.setOnClickListener(v -> {
-            addPointsToScore(2 , false);
+            addPointsToScore(2, false);
         });
-        binding.restartButton.setOnClickListener(v -> {
+        binding.restartButton.setOnClickListener(view -> {
             resetScores();
         });
-        binding.resultButton.setOnClickListener(v -> {
-            endMatch();
+        binding.resultButton.setOnClickListener(view -> {
+            endGame();
         });
-
     }
-
-    private void endMatch() {
+    // termina el jogo, vamos a la otra activity ACUERDATE DE ESTA MIERDA XFAVOR
+    private void endGame() {
         Intent intent = new Intent(this, ScoreActivity.class);
-        intent.putExtra("localScore", viewModel.getLocalScore().getValue());
-        intent.putExtra("visitorScore", viewModel.getVisitorScore().getValue());
+        intent.putExtra("localScore", localScore);
+        intent.putExtra("visitorScore", visitorScore);
         startActivity(intent);
     }
 
     private void addPointsToScore(int points, boolean isLocal) {
-        viewModel.addPointsToScore(points, isLocal);
-        /*
-        if ( isLocal) {
-            binding.localScoreText.setText(String.valueOf(viewModel.getLocalScore()));
-        } else  {
-            binding.visitorScoreText.setText(String.valueOf(viewModel.getVisitorScore()));
+        if (isLocal) {
+            localScore += points;
+            binding.localScoreText.setText(String.valueOf(localScore));
+        } else {
+            visitorScore += points;
+            binding.visitorScoreText.setText(String.valueOf(visitorScore));
         }
-         */
     }
-
-    private void resetScores() {
-        viewModel.resetScores();
-        //binding.visitorScoreText.setText(String.valueOf(viewModel.getVisitorScore()));
-        //binding.localScoreText.setText(String.valueOf(viewModel.getLocalScore()));
+    // 7 - Un botón para resetear los marcadores y pintarlos
+    private void resetScores(){
+        localScore = 0;
+        visitorScore = 0;
+        binding.localScoreText.setText(String.valueOf(localScore));
+        binding.visitorScoreText.setText(String.valueOf(visitorScore));
     }
-
 }
-
-
-
-
-
-
-
-
-
-
