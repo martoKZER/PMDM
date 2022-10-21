@@ -1,5 +1,26 @@
 <resources>
     <string name="app_name">A05_Quizzes</string>
     <string name="submit">Submit</string>
-    <string name="Question_1">Ondongo en LQSA </string>
+    <string name="Question_1">¿Cuales han sido los 3 equipos que nunca han descendido de categoria en la liga española?</string>
+    <string name="Opcion_1_a">Real Madrid, Barcelona, Atlético de Madrid</string>
+    <string name="Opcion_1_b">Real Madrid, Valencia, Atlético de Madrid</string>
+    <string name="Opcion_1_c">Real Madrid, Barcelona, Athletic Bilbao</string>
+    <string name="Opcion_1_d">Real Madrid, Barcelona, Sevilla</string>
+    <string name="Question_2">En la temporada pasada, ¿que jugadores están empatados como segundos goleadores?</string>
+    <string name="Opcion_2_a"></string>
+    <string name="Opcion_2_b">Iago Aspas, Vini Jr, Raúl de Tomás y Juanmi</string>
+    <string name="Opcion_2_c"></string>
+    <string name="Opcion_2_d"></string>
+    <string name="siguiente">siguiente</string>
+    <string name="terminar">terminar</string>
+    <string name="contador_pregunta_1">1 / 3</string>
+    <string name="contador_pregunta_2">2 / 3</string>
+    <string name="contador_pregunta_3">3 / 3</string>
+    <string name="bien1">Bien!!</string>
+    <string name="bien2">Correcto!</string>
+    <string name="bien3">Genial!!!</string>
+    <string name="bien4">Impresionante</string>
+    <string name="bien5">Lo estás haciendo bien!</string>
+
+
 </resources>

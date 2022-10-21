@@ -11,14 +11,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        android:layout_marginStart="100dp"/>
+        android:textAlignment="center"
+        android:fontFamily="monospace"
+        android:paddingEnd="60dp"
+        android:paddingStart="60dp"
+        android:text="@string/bien5"
+        android:textSize="18sp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginStart="150dp"/>
+        android:layout_marginStart="140dp"
+        android:text="@string/siguiente"/>
     </LinearLayout>
 </layout>
