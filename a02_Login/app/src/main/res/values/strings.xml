@@ -5,6 +5,6 @@
     <string name="contrasena">Contraseña</string>
     <string name="entrar">ENTRAR</string>
     <string name="iniciodesesion">Inicio de sesión</string>
-    <string name="bienvenido">Bienvenido!</string>
+    <string name="bienvenido">Bienvenido: </string>
     <string name="faltanDatos">Comprueba que tus credenciales no estén vacias</string>
 </resources>

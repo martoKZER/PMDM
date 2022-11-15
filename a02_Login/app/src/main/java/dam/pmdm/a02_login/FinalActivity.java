@@ -11,6 +11,9 @@ public class FinalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final);
+        String email = getIntent().getStringExtra("etxEmail");
         TextView txtWelcome = findViewById(R.id.txtWelcome);
+        String bienvenida = R.string.bienvenido + email;
+        txtWelcome.setText(bienvenida);
     }
 }
