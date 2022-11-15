@@ -13,7 +13,7 @@ public class FinalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_final);
         String email = getIntent().getStringExtra("etxEmail");
         TextView txtWelcome = findViewById(R.id.txtWelcome);
-        String bienvenida = R.string.bienvenido + email;
+        String bienvenida = getString(R.string.bienvenido) + " " + email;
         txtWelcome.setText(bienvenida);
     }
 }
