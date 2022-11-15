@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
         etxEmail = binding.etxEmail;
         etxPassword = binding.etxPassword;
-        Button btnLogin = binding.btnLogin;
         somethingNull = binding.txtSomethingNull;
+        Button btnLogin = binding.btnLogin;
         btnLogin.setOnClickListener(v -> {
             if (etxEmail.getText().toString().equals("".trim()) || etxPassword.getText().toString().equals("".trim())) {
                 somethingNull.setVisibility(View.VISIBLE);
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        somethingNull.setVisibility(View.INVISIBLE);
 
     }
 
