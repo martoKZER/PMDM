@@ -2,6 +2,9 @@
     <string name="app_name">A02_Login</string>
     <string name="login_background">Login background</string>
     <string name="email">Email</string>
-    <string name="contrase_a">Contraseña</string>
+    <string name="contrasena">Contraseña</string>
     <string name="entrar">ENTRAR</string>
+    <string name="iniciodesesion">Inicio de sesión</string>
+    <string name="bienvenido">Bienvenido!</string>
+    <string name="faltanDatos">Comprueba que tus credenciales no estén vacias</string>
 </resources>
